@@ -8,9 +8,10 @@
       
   </div>
   <div class="col-9">
-    <div class="pt-5">
+    <div class="pt-5 d-flex justify-content-between align-items-baseline">
       <h1>{{ $user -> username }}</h1>
-    </div>    
+      <a href="#">Add New Post</a>    
+  </div>    
     <ul class="d-flex list-unstyled">
       <li class="pr-3"><strong>0</strong> posts</li>
       <li class="pr-3"><strong>0</strong> followers</li>
