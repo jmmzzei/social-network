@@ -20,8 +20,8 @@
         </div>
 
 <div class="form-group pt-3 row">
-    <label for="exampleInputEmail1" class="d-block">title </label>
-    <input type="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title" value="{{$user->profile->title}}">
+    <label for="title" class="d-block">title </label>
+    <input type="title" class="form-control" id="title" placeholder="Enter title" >
         @error('title')
           <strong class="alert alert-danger mt-3">{{ $message }}</strong>
         @enderror
@@ -29,8 +29,8 @@
 
   
 <div class="form-group pt-3 row">
-    <label for="exampleInputEmail1" class="d-block">description </label>
-    <input type="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter description" value="{{$user->profile->description}}">
+    <label for="description" class="d-block">description </label>
+    <input type="description" class="form-control" id="description"  placeholder="Enter description" value="{{$user->profile->description}}">
         @error('description')
           <strong class="alert alert-danger mt-3">{{ $message }}</strong>
         @enderror
@@ -38,8 +38,8 @@
 
   
 <div class="form-group pt-3 row">
-    <label for="exampleInputEmail1" class="d-block">link </label>
-    <input type="link" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter link" value="{{$user->profile->link}}">
+    <label for="link" class="d-block">link </label>
+    <input type="link" class="form-control" id="link" placeholder="Enter link" value="{{$user->profile->link}}">
         @error('link')
           <strong class="alert alert-danger mt-3">{{ $message }}</strong>
         @enderror
