@@ -9,12 +9,12 @@ class ProfilesController extends Controller
 {
   public function update(User $user){
     $data = request()->validate([
-      'description'=>'',
-      'title'=>'',
+      'description'=>'required',
+      'title'=>'required',
       'image'=>'',
       'link'=>'url',
     ]);
-   $user->profile->update($data);
+   auth()->user()->profile->update($data);
    return redirect("/profile/{$user->id}");
   }
 

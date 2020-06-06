@@ -1,11 +1,10 @@
-
 @extends('layouts.app')
 
 @section('content')
 <div class="container">
     <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="POST">
       @csrf
-      @method('PATCH')
+      @method('patch')
     <div class="row">
       <div class="col-8 offset-2">
         <div class="pt-4 pb-2 text-center">
@@ -21,32 +20,31 @@
 
 <div class="form-group pt-3 row">
     <label for="title" class="d-block">title </label>
-    <input type="title" class="form-control" id="title" placeholder="Enter title" >
+    <input class="form-control" name="title" id="title" placeholder="Enter title" value="{{$user->profile->title}}">
         @error('title')
           <strong class="alert alert-danger mt-3">{{ $message }}</strong>
         @enderror
   </div>
 
-  
 <div class="form-group pt-3 row">
     <label for="description" class="d-block">description </label>
-    <input type="description" class="form-control" id="description"  placeholder="Enter description" value="{{$user->profile->description}}">
+    <input class="form-control" name="description" id="description"  placeholder="Enter description" value="{{$user->profile->description}}">
         @error('description')
           <strong class="alert alert-danger mt-3">{{ $message }}</strong>
         @enderror
   </div>
 
-  
 <div class="form-group pt-3 row">
     <label for="link" class="d-block">link </label>
-    <input type="link" class="form-control" id="link" placeholder="Enter link" value="{{$user->profile->link}}">
+    <input class="form-control" name="link" id="link" placeholder="Enter link" value="{{$user->profile->link}}">
         @error('link')
-          <strong class="alert alert-danger mt-3">{{ $message }}</strong>
+          <strong class="alert alert-danger mt-3">{{ $message }} Maybe you forgot the 'http://'' part?</strong>
         @enderror
   </div>
 
-
-    <div class="row pt-4"><button class="btn btn-dark">Change Profile</button></div>
+    <div class="row pt-4">
+      <button class="btn btn-dark">Change Profile</button>
+    </div>
 
       </div>
     </div>
