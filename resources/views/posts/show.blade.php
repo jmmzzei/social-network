@@ -11,7 +11,7 @@
        
          <div class="d-flex align-items-center pb-4">
           <div class="pr-3 ">
-            <img src="/storage/{{$post->user->profile->image}}" alt="profile image" class="rounded-circle w-100" style="max-width: 40px;">
+            <img src="{{$post->user->profile->profileImage()}}" alt="profile image" class="rounded-circle w-100" style="max-width: 40px;">
           </div>
           <div class="font-weight-bold"> 
             <a href="/profile/{{$post->user->id}}"> <span class="text-dark">{{$post->user->username}}</span></a>
