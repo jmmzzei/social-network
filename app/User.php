@@ -19,6 +19,15 @@ class User extends Authenticatable
         'name', 'email', 'username','password',
     ];
 
+    protected static function boot()
+    {
+      parent::boot();
+
+      static::created(function ($user){
+        $user->profile()->create();
+      });      
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

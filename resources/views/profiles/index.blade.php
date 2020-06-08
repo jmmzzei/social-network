@@ -4,14 +4,14 @@
 <div class="container">
   <div class="row">
     <div class="col-3 p-5">
-      <img src="http://lorempixel.com/160/160" alt="main image" class="rounded-circle">
+      <img src="/storage/{{$user->profile->image}}" alt="main image" class="rounded-circle w-100">
   </div>
   <div class="col-9">
     <div class="pt-5 d-flex justify-content-between align-items-baseline">
       <h1>{{ $user -> username }}</h1>
 @can('update', $user->profile)
       <a href="/p/create">Add New Post</a>    
-@endcan
+      @endcan
   </div>
 
 @can('update', $user->profile)
