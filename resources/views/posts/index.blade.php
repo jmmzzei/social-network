@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container align-items-center">
-  <h1 class="text-center font-weight-bold">What's new?</h1>
+<div class="container align-items-center">
+  <div class="d-flex flex-lg-row flex-column align-items-center justify-content-between">
+    <h1 class="font-weight-bold">What's new?</h1>
+    <div>
+      <a href="/profile/{{$user->id}}" class="btn btn-outline-dark">My Profile</a>
+    </div>    
+  </div>
 @foreach($posts as $post)
     <div class="row p-2">
       <div class="col-6 offset-3">
