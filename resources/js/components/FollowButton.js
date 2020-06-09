@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
-function FollowButton(props) {
-    let user = JSON.parse(props.user.user)
+function FollowButton({follows, user}) {
+    let userJSON = JSON.parse(user)
+    console.log(follows)
+    let [state, setState] = useState(follows) 
     const follow = () => {
-        axios.post(`/follow/${user.id}`)
+        axios.post(`/follow/${userJSON.id}`)
             .then(res => {
-                alert(res.data)
+                setState(!state)
+                console.log(res.data)
+            })
+            .catch(err => {
+                if(err.response.status == 401){
+                   window.location = '/login' 
+                }
             })
     }
 
     return (
         <div>
-          <button className="btn btn-primary ml-4 pb-2" onClick={follow} >Follow</button>
+          <button 
+            className={`btn ${state ? 'btn-outline-primary' : 'btn-primary'} ml-4 pb-2`} 
+            onClick={follow} >
+            {state ? 'Unfollow' : 'Follow'}
+         </button>
         </div>
     );
 }
@@ -23,5 +35,5 @@ const followButton = document.getElementById('follow-button')
 
 if (followButton) {
     const props = Object.assign({}, followButton.dataset)
-    ReactDOM.render(<FollowButton user={props}/>, followButton);
+    ReactDOM.render(<FollowButton {...props}/>, followButton);
 }

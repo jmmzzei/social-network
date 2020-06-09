@@ -10,8 +10,12 @@
     <div class="pt-5 d-flex justify-content-between align-items-baseline">
     <div class="d-flex align-items-center">
        <div class="h4">{{ $user->username }}</div>
-      <div id="follow-button" data-user="{{$user}}"></div>
-    </div>
+
+    @cannot('update', $user->profile)
+      <div id="follow-button" data-user="{{$user}}" data-follows="{{$follows}}"></div>
+    @endcannot
+ 
+   </div>
 @can('update', $user->profile)
       <a href="/p/create">Add New Post</a>    
       @endcan
