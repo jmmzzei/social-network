@@ -27,9 +27,9 @@
     </div>
 @endforeach
 @else
-  <h3 class="m-4 border text-center p-4 ">It seems that you don't follow anybody...</h3>
-  <div class="container m-4 border text-center p-4 ">
-        <p>Here are some recommendations:</p>
+  <h3 class="my-4 border text-center p-4 ">It seems that you don't follow anybody...</h3>
+  <div class="container my-4 border text-center p-4 ">
+        <h4 class="pb-3">Here are some recommendations:</h4>
   <div class="row">
   @foreach($recommendations as $recommendation)
     <div class="col-sm ">

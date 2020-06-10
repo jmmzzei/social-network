@@ -21,7 +21,7 @@ function FollowButton({follows, user}) {
     return (
         <div>
           <button 
-            className={`btn ${state ? 'btn-outline-primary' : 'btn-primary'} ml-4 pb-2`} 
+            className={`btn ${state ? 'btn-outline-primary' : 'btn-primary'} ml-4 pb-2 mb-2`} 
             onClick={follow} >
             {state ? 'Unfollow' : 'Follow'}
          </button>
