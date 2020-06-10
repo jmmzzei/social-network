@@ -8,6 +8,7 @@
       <a href="/profile/{{$user->id}}" class="btn btn-outline-dark">My Profile</a>
     </div>    
   </div>
+  @if(count($posts)>1)
 @foreach($posts as $post)
     <div class="row p-2">
       <div class="col-6 offset-3">
@@ -25,6 +26,9 @@
       </div>
     </div>
 @endforeach
+@else
+  <h3 class="m-4 border text-center p-4 ">It seems that you don't follow anybody...</h3>
+@endif
   <div class="row">
     <div class="col-12 d-flex justify-content-center ">{{$posts->links()}}</div>
   </div>
