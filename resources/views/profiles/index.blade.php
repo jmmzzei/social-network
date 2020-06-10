@@ -26,9 +26,9 @@
 @endcan  
 
 <ul class="d-flex list-unstyled">
-      <li class="pr-3"><strong>{{$user->posts->count()}}</strong> posts</li>
-      <li class="pr-3"><strong>{{$user->profile->followers->count()}}</strong> followers</li>
-      <li class="pr-3"><strong>{{$user->following->count()}}</strong> followings</li>
+      <li class="pr-3"><strong>{{$postCount}}</strong> posts</li>
+      <li class="pr-3"><strong>{{$followersCount}}</strong> followers</li>
+      <li class="pr-3"><strong>{{$followingCount}}</strong> followings</li>
     </ul>
     <div class="pt-1"><strong>{{  $user->profile->title }}</strong></div>
     <div class="pt-1">{{ $user->profile->description}}</div>
