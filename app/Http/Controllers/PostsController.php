@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Post;
+use App\User;
+
 class PostsController extends Controller
 {
   public function __construct()
@@ -16,7 +18,8 @@ class PostsController extends Controller
     $user = auth()->user();
     $users = auth()->user()->following()->pluck('profiles.user_id');
     $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
-    return view('posts/index', compact('posts', 'user'));
+    $recommendations = User::all()->random(4);
+    return view('posts/index', compact('posts', 'user', 'recommendations'));
   }
 
   public function create(){
